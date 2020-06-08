@@ -1,0 +1,73 @@
+
+{% block title %} {% endblock %}
+{% block body %}
+    <style>
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #1426ff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #1426ff
+        }
+
+        .button:active {
+            background-color: #1426ff;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+    <title>Coordonnées Candidat</title>
+    <h1>Candidat</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ candidat.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom candidat</th>
+                <td>{{ candidat.nomcandidat }}</td>
+            </tr>
+            <tr>
+                <th>Prenom candiat</th>
+                <td>{{ candidat.prenomcandiat }}</td>
+            </tr>
+            <tr>
+                <th>Mail candidat</th>
+                <td>{{ candidat.mailcandidat }}</td>
+            </tr>
+            <tr>
+                <th>Telephone candidat</th>
+                <td>{{ candidat.telephonecandidat }}</td>
+            </tr>
+            <tr>
+                <th>Adresse candidat</th>
+                <td>{{ candidat.adressecandidat }}</td>
+            </tr>
+            <tr>
+                <th>Date naissance candidat</th>
+                <td>{{ candidat.datenaissancecandidat ? candidat.datenaissancecandidat|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Mot de passe candidat</th>
+                <td>{{ candidat.mdpcandidat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('candidat_index') }}" ><button class="button">{{ button_label|default('Retour à la liste') }}</button></a>
+    <a href="{{ path('candidat_edit', {'id': candidat.id}) }}" ><button class="button ">{{ button_label|default('Modifier') }}</button></a>
+    {{ include('candidat/_delete_form.html.twig') }}
+
+{% endblock %}

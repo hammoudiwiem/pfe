@@ -1,0 +1,39 @@
+{% block title %}{% endblock %}
+{% block body %}
+    <style>
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #1426ff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        input[type=text] {
+            width: 96%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+        }
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 3px;
+        }
+    </style>
+    <center><h1>Modifier Les Roles</h1></center>
+
+{{ form_start(formUser) }}
+{{ form_widget(formUser) }}
+<button type="submit" class="button">Modifier</button>
+{{ form_end(formUser) }}
+{% endblock %}

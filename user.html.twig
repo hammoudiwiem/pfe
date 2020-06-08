@@ -1,0 +1,87 @@
+
+{% block title %}{% endblock %}
+{% block body %}
+    <style>
+        #users {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #users td, #users th {
+            border: 1px solid #ddd;
+            padding: 2px;
+        }
+
+        #users tr:nth-child(even){background-color: #f2f2f2;}
+
+        #users tr:hover {background-color: #ddd;}
+
+        #users th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center ;
+            background-color: whitesmoke;
+            color: #1426ff;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #1426ff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #1426ff
+        }
+
+        .button:active {
+            background-color: #1426ff;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+    <center><h1>Liste des Utilisateurs</h1></center>
+<table id="users" class="table table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Rôles</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+    <tr>
+        <td><center>{{ user.id }}</center></td>
+        <td><center>{{ user.email }}</center></td>
+        <td>
+            <center>
+            {% for role in user.roles %}
+            {% if role=="ROLE_USER" %}
+            Utilisateur
+            {% elseif role=="ROLE_FORM" %}
+            Formteur
+            {% elseif role=="ROLE_ADMIN" %}
+            Administrateur
+            {% endif %}
+            {% endfor %}
+            </center>
+        </td>
+        <td>
+            <center>  <a href="{{ path('modifier/utilisateurs', {'id':user.id}) }}" class="button">Modifier</a> </center>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

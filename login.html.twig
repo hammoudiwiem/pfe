@@ -1,0 +1,90 @@
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <style xmlns="http://www.w3.org/1999/html">
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #1426ff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #1426ff
+        }
+
+        .button:active {
+            background-color: #1426ff;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        input[type=email] {
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+        }
+
+        input[type=password] {
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+        }
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 3px;
+        }
+    </style>
+    <title> connexion</title>
+
+    <form method="post">
+    {% if error %}
+        <div class="alert alert-danger">Données invalides</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+        <fieldset>
+    <div>
+        <center><h1 > Connexion </h1></center>
+        <div class="form-group">
+           <center><input type="email" value="{{ last_username }}" name="email" class="form-control" id="exampleInputEmail1" placeholder="veuillez entrer votre Email..." required autofocus></center>
+        </div>
+<br>
+    <div class="form-group">
+        <center><input type="password" name="password" id="inputPassword" class="form-control" placeholder="Veuillez entrer votre mot de passe..." required></center>
+    </div>
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}">
+
+     <br><br>
+        <div>
+            <center><button class="button" type="submit">Connecter </button></center>
+        </div>
+
+<br>
+    </div>
+            <div class="text-center mt-4 font-weight-light">
+                Creer nouveau compte? <a href="{{ path('app_register') }}" class="text-primary"> Créer</a>
+            </div>
+        </fieldset>
+    </form>
+        <br>
+
+
+{% endblock %}

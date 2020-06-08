@@ -1,0 +1,113 @@
+
+{% block title %}{% endblock %}
+{% block body %}
+    <style>
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #1426ff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #1426ff
+        }
+
+        .button:active {
+            background-color: #1426ff;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        input[type=text] {
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+        }
+        input[type=email] {
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+        }
+        input[type=date] {
+            width: 50%;
+            padding: 12px 20px 12px 40px;
+            border: 2px solid #ccc;
+            font-size: 16px;
+            border-radius: 4px;
+
+        }
+        input[type=number] {
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+        }
+        input[type=password] {
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid #ccc;
+        }
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 3px;
+        }
+
+        .col-75 {
+            width: 60%;
+            margin-top: 6px;
+        }
+    </style>
+    <title>Inscription</title>
+    <center><h1>S'inscrire </h1></center>
+<fieldset>
+    {{ form_start(registrationForm) }}
+    <div class="form-group">
+        <div class="col-75">
+            {{ form_row(registrationForm.nom,{'label': 'Nom', 'attr':{'placeholder':'Entrez votre nom...'}}) }}
+        </div></div>
+    <div class="form-group">
+        <div class="col-75">
+         {{ form_row(registrationForm.prenom,{'label': 'prenom', 'attr':{'placeholder':'Entrez votre prenom...'}}) }}
+        </div></div>
+    <div class="form-group">
+        <div class="col-75">
+        {{ form_row(registrationForm.email,{'label': 'Mail', 'attr':{'placeholder':'Entrez votre e_mail...'}}) }}
+        </div></div>
+    <div class="form-group">
+        <div class="col-75">
+        {{ form_row(registrationForm.telephone,{'label': 'Telephone', 'attr':{'placeholder':'Entrez votre Telephone...'}}) }}
+        </div></div>
+    <div class="form-group">
+        <div class="col-75">
+        {{ form_row(registrationForm.adresse,{'label': 'Adresse', 'attr':{'placeholder':'Entrez votre Adresse...'}}) }}
+        </div></div>
+    <div class="form-group">
+        <div class="col-75">
+        {{ form_row(registrationForm.datenaissance) }}
+        </div></div>
+    <div class="form-group">
+        <div class="col-75">
+        {{ form_row(registrationForm.password,{'label': 'Mot de passe', 'attr':{'placeholder':'Entrez votre mot de passe...'}}) }}
+        </div></div>
+
+    <div class="form-group">
+        <div class="col-75">
+            {{ form_row(registrationForm.confirmer_mdp,{'label': 'ConfirmationMot de passe', 'attr':{'placeholder':'Répétez votre mot de passe...'}}) }}
+        </div></div>
+
+</fieldset>
+        <button class="button ">Register</button>
+    {{ form_end(registrationForm) }}
+    <a href="{{ path('blog') }}"><button class="button">{{ button_label|default('Annuler') }}</button></a>
+{% endblock %}

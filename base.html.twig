@@ -1,0 +1,187 @@
+<!doctype html>
+<!--
+	Solution by GetTemplates.co
+	URL: https://gettemplates.co
+-->
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- awesone fonts css-->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!-- owl carousel css-->
+    <link rel="stylesheet" href="owl-carousel/assets/owl.carousel.min.css" type="text/css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="base2/css1/stylepopup.css">
+    <title> Jock'art Formation</title>
+    <style>
+        .dropbtn {
+            background-color: #FFFFFF;
+            color: grey;
+            padding: px;
+            padding-left: 0px;
+            padding-right: 0px;
+            font-size: 20px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width : 8.9%;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 6px 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #31b0d5;}
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
+    <!-- décaler le mot jockart--> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="{{ path('blog') }}" class="navbar-brand" >Jock'art </a>
+    <div class="dropdown">
+        <button class="dropbtn">Notre Ecole</button>
+        <div class="dropdown-content">
+            <a href="{{ path('quisommesnous') }}">Qui sommes - nous ? </a>
+            <a href="{{ path('methodedapprent') }}">notre méthode d'apprentissage </a>
+            <a href="{{ path('nosformateurs') }}">nos formateurs </a>
+            <a href="{{ path('avisettemoignages') }}">Avis et Témoignages </a>
+        </div>
+    </div>
+
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Formations</button>
+        <div class="dropdown-content">
+            <a href="{{ path('artsgraphiques') }}">Arts graphiques</a>
+            <a href="{{ path('commetmarktng') }}">Communication & Marketing</a>
+            <a href="{{ path('informatique') }}"> Informatique</a>
+            <a href="#">Langues</a>
+            <a href="#">Logiciels</a>
+        </div>
+    </div>
+
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Entreprises</button>
+        <div class="dropdown-content">
+            <a href="{{ path('references') }}">Nos références</a>
+            <a href="{{ path('partenaires') }}">Partenaires</a>
+        </div>
+    </div>
+
+
+    <div class="dropdown">
+        <button class="dropbtn"> Services</button>
+        <div class="dropdown-content">
+            <a href="{{ path('services') }}"> Nos services </a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+
+
+
+    <form class="form-inline my-2 my-lg-0">
+        <a href="{{ path('app_login') }}" class="btn btn-outline-dark my-2 my-sm-0 mr-3 text-uppercase">Se connecter</a>
+        <a href="{{ path('app_register') }}" class="btn btn-info my-2 my-sm-0 text-uppercase">S'inscrire</a>
+    </form>
+</nav>
+
+{% block body %}{% endblock %}
+
+<footer class="container-fluid" id="gtco-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" id="contact">
+                <h4> Contactez nous </h4>
+                <input type="text" class="form-control" placeholder="Nom">
+                <input type="text" class="form-control" placeholder="Prenom">
+                <input type="email" class="form-control" placeholder="Adresse Mail">
+                <textarea class="form-control" placeholder="Message"></textarea>
+                <a href="#" class="submit-button">Envoyer <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-6">
+                        <h4>Company</h4>
+                        <ul class="nav flex-column company-nav">
+                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">FAQ's</a></li>
+                        </ul>
+                        <h4 class="mt-5">Suivez-nous</h4>
+                        <ul class="nav follow-us-nav">
+                            <li class="nav-item"><a class="nav-link pl-0" href="https://www.facebook.com/JockArtFormation.JF/"><i class="fa fa-facebook"
+                                                                                                                                  aria-hidden="true"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/jockartformation/"><i class="fa fa-instagram"
+                                                                                                                           aria-hidden="true"></i></a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/company/jock-art-formation/"><i class="fa fa-linkedin"
+                                                                                                                                    aria-hidden="true"></i></a></li>
+                        </ul>
+                        <h4 class="mt-5">Contactez-nous </h4>
+                        <ul class="nav follow-us-nav">
+                            <li class="nav-item"><a class="nav-link pl-0" href="mailto:jockartf@gmail.com">jockartf@gmail.com</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link pl-0" href="#"><i class=" fa fa-phone icon" aria-hidden="true"></i></a></li>-->
+                            <li class="nav-item"><a class="nav-link pl-0" href="tel:21671280916 ">(+216) 71 280 916</a></li>
+                            <li class="nav-item"><a class="nav-link pl-0" href="tel: 21652290350">(+216) 52 290 350</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4>Formations</h4>
+                        <ul class="nav flex-column services-nav">
+                            <li class="nav-item"><a class="nav-link" href="#">Arts Graphique</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Communication & Marketing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Infomatique</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Langues</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        <p>&copy; 2019. All Rights Reserved. Design by <a href="https://gettemplates.co" target="_blank">GetTemplates</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- owl carousel js-->
+<script src="owl-carousel/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

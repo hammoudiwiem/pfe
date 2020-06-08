@@ -1,0 +1,36 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <style>
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #1426ff;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #1426ff
+        }
+
+        .button:active {
+            background-color: #1426ff;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+    <title>Nouveau candidat</title>
+<center>
+    <h1>Nouveau Candidat</h1>
+</center>
+    {{ include('candidat/_form.html.twig') }}
+
+    <a href="{{ path('candidat_index') }}"><button class="button ">{{ button_label|default('Consulter la liste') }}</button></a>
+    <a href="{{ path('gerercandidat') }}"><button class="button ">{{ button_label|default('Annuler') }}</button></a>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% block title %}{% endblock %}
+{% block body %}
+<style>
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 2px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center ;
+        background-color: whitesmoke;
+        color: #1426ff;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 12px 22px;
+        font-size: 15px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #1426ff;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #1426ff
+    }
+
+    .button:active {
+        background-color: #1426ff;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+    input[type=search] {
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding-left: 40px;
+    }
+</style>
+    <title>Liste Candidats</title>
+    <form>
+        <input type="search" name="search" placeholder="Search..">
+    </form>
+
+    <center><h1>Liste des Candidats</h1></center>
+    <fieldset>
+    <table class="table" id="customers">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nomcandidat</th>
+            <th>Prenomcandidat</th>
+            <th>Mailcandidat</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for candidat in candidats %}
+            <tr>
+                <td>{{ candidat.id }}</td>
+                <td>{{ candidat.nomcandidat }}</td>
+                <td>{{ candidat.prenomcandiat }}</td>
+                <td>{{ candidat.mailcandidat }}</td>
+                <td>
+                    <a href="{{ path('candidat_edit', {'id': candidat.id}) }}"><button class="button  ">modifier</button></a>
+                    <a href="#"><button class="button  " >Bloquer</button></a>
+                    <a href="#"><button class="button  ">Débloquer</button></a>
+                    <a href="{{ path('candidat_show', {'id': candidat.id}) }}"><button class="button  ">infos</button></a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">Pas de candidats </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </fieldset>
+    <br>
+    <a href="{{ path('candidat_new') }}"><button class="button  ">Nouveau candidat</button></a>
+    <a href="{{ path('gerercandidat') }}"  > <button class="button  ">Annuler </button></a>
+{% endblock %}
